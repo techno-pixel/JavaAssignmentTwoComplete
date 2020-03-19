@@ -4,6 +4,7 @@ package registrationsystem;
 import java.time.LocalDate;
 import java.time.Period;
 
+    //abstract class
 abstract class Person {
     //variables
     protected String first;
@@ -14,11 +15,7 @@ abstract class Person {
     protected LocalDate dob;
     protected LocalDate start;
 
-    /**
-     * returns dob as an int
-     *
-     * @author Jad Seaidoun
-     */
+    // SETTERS AND GETTERS ------------------------------------------------------------------------------------
     protected int getAge() {
         return Period.between(dob, LocalDate.now()).getYears();
     }
@@ -27,7 +24,9 @@ abstract class Person {
     /**
      * returns full address spaced out once
      *
+     * @param separator a space
      * @author Jad Seaidoun
+     * @since 1.1
      */
     protected String getAddress(String separator) {
         StringBuilder sb = new StringBuilder();
@@ -39,10 +38,13 @@ abstract class Person {
         return sb.toString();
     }
 
+    // METHODS -----------------------------------------------------------------------------------------------
     /**
-     * returns full name spaced out
+     * StringBuilder
      *
+     * @return returns full name spaced out
      * @author Jad Seaidoun
+     * @since 1.1
      */
     public StringBuilder stringBuilder() {
         StringBuilder sb = new StringBuilder();
@@ -55,7 +57,12 @@ abstract class Person {
     /**
      * sets address, city and zip code when changed
      *
+     * @param address address (street and number)
+     * @param city city
+     * @param zip zip or postal code
+     * @return sets address, city and zip code when changed
      * @author Jad Seaidoun
+     * @since 1.1
      */
     public void changeAddress(String address, String city, String zip) {
         this.address = address;

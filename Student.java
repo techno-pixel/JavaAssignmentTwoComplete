@@ -65,11 +65,19 @@ public class Student extends Person {
         this.dob = dob;
     }
 
+    public int getStudentNumber() {
+        return this.stID;
+    }
+
     // METHODS -----------------------------------------------------------------------------------------------
     /**
      * if the grade is a pass, but under 100 and over 0, it adds it to the map of completed courses
      *
+     * @param course course that the student completed
+     * @param grade grade student received
+     * @return adds the course and grade to a map if student has passed
      * @author Jad Seaidoun
+     * @since 1.1
      */
     public void addCompletedCourse(Course course, int grade) {
         if (grade > 100 || grade < 0) {
@@ -81,7 +89,9 @@ public class Student extends Person {
     /**
      * lists the courses completed from the map with grades and returns as a string
      *
+     * @return List with delimiter and string to match the test output
      * @author Jad Seaidoun
+     * @since 1.1
      */
     public String getCoursesCompleted() {
         List<String> courses = new ArrayList<>();
@@ -94,7 +104,10 @@ public class Student extends Person {
     /**
      * checks to see if completed course from the map is a pass (over 50)
      *
+     * @param course a list of courses completed
+     * @return return true if the student successfully passes a class
      * @author Jad Seaidoun
+     * @since 1.1
      */
     public boolean hasCompleted(String course) {
         for(Map.Entry<Course, Integer> entry: this.completed.entrySet()) {
@@ -106,18 +119,10 @@ public class Student extends Person {
     }
 
     /**
-     * gets student number
-     *
-     * @author Jad Seaidoun
-     */
-    public int getStudentNumber() {
-        return this.stID;
-    }
-
-    /**
      * toString
      *
      * @author Jad Seaidoun
+     * @since 1.1
      */
     @Override
     public String toString() {

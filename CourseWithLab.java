@@ -31,28 +31,21 @@ public class CourseWithLab extends Course {
         this.labInst = labInst;
     }
 
-    /**
-     * returns the lab details (room, course day and time)
-     *
-     * @author Jad Seaidoun
-     */
+    // SETTERS AND GETTERS ------------------------------------------------------------------------------------
     public String getLabClassAndTime() {
         return "room: " + this.labRoom + ", " + this.labDay.name() + " starting at " + this.labTime.toString();
     }
 
-    /**
-     * returns the lab tech
-     *
-     * @author Jad Seaidoun
-     */
     public Instructor getLabTech() {
         return this.labInst;
     }
 
+    // METHODS -----------------------------------------------------------------------------------------------
     /**
      * returns the course course and title + with lab if it is a lab course
      *
      * @author Jad Seaidoun
+     * @since 1.1
      */
     @Override
     public String toString() {

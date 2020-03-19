@@ -56,7 +56,9 @@ public class Instructor extends Person {
     /**
      * checks if the teacher is qualified to teach a course
      *
+     * @return a list of courses an instructor can teach if there are any
      * @author Jad Seaidoun
+     * @since 1.1
      */
     public String listOfSubjectsCertifiedToTeach() {
         if (this.subjects.size() == 0) {
@@ -68,7 +70,10 @@ public class Instructor extends Person {
     /**
      * adds courses into a set
      *
+     * @param course course object
+     * @return adds courses into a set
      * @author Jad Seaidoun
+     * @since 1.1
      */
     public void addCourseToInstructorAbilities(String course) {
 
@@ -78,7 +83,9 @@ public class Instructor extends Person {
     /**
      * toString
      *
+     * @return the toString from Person class
      * @author Jad Seaidoun
+     * @since 1.1
      */
     @Override
     public String toString() {

@@ -50,14 +50,42 @@ public class Course {
         return this.instructor;
     }
 
+    public String getName() {
+        return this.name;
+    }
+
+    public int getClassSize() {
+        return this.size;
+    }
+
+    /**
+     * setClassSize - i know this is not a method but it has code so i added comments
+     *
+     * @param size input of max class size
+     * @return is to set the max number of students that a class can hold
+     * @author Jad Seaidoun
+     * @since 1.1
+     */
+    public String setClassSize(int size) {
+        if (size > 40) {
+            this.size = 40;
+            return "Max class size = 40, it has been set to 40";
+        }
+        this.size = size;
+        return null;
+    }
+
     // METHODS -----------------------------------------------------------------------------------------------
 
     /**
-     * addStudent(Student student) takes the object of the student created, and checks for 3 things:
+     * addStudent takes the object of the student created, and checks for 3 things:
      * if the student is in good standing, if he has a prereq complete when being registered for a course that has
      * a prereq, and if there is room in the classroom
      *
+     * @param student object of the student
+     * @return adds student to list if 3 tests pass
      * @author Jad Seaidoun
+     * @since 1.1
      */
     public String addStudent(Student student) {
         if (!student.studentInGoodStanding()) {
@@ -74,9 +102,11 @@ public class Course {
     }
 
     /**
-     * displayTheClassList adds the student registered in the course into a list
+     * displayTheClassList
      *
+     * @return adds the student registered in the course into a list
      * @author Jad Seaidoun
+     * @since 1.1
      */
     public String displayTheClassList() {
         List<String> st = new ArrayList<>();
@@ -87,34 +117,13 @@ public class Course {
     }
 
     /**
-     * setClassSize is to set the max number of students that a class can hold
-     *
-     * @author Jad Seaidoun
-     */
-    public String setClassSize(int size) {
-        if (size > 40) {
-            this.size = 40;
-            return "Max class size = 40, it has been set to 40";
-        }
-        this.size = size;
-        return null;
-    }
-
-    /**
-     * returns the class size
-     *
-     * @author Jad Seaidoun
-     */
-    public int getClassSize() {
-        return this.size;
-    }
-
-    /**
      * matureClass checks if the students ages average to over or under 25
      * it grabs the students from the studentsList and adds up their age into a sum variable
      * if the sum is > 25 it will set it to true and vice versa
      *
+     * @return true if the average age of the students is over 25
      * @author Jad Seaidoun
+     * @since 1.1
      */
     public boolean matureClass() {
         int sum = 0;
@@ -128,24 +137,17 @@ public class Course {
      * checks prereq from the constructor
      *
      * @author Jad Seaidoun
+     * @since 1.1
      */
     public String checkPrerequisite() {
         return this.prereq;
     }
 
     /**
-     * returns course name
-     *
-     * @author Jad Seaidoun
-     */
-    public String getName() {
-        return this.name;
-    }
-
-    /**
      * toString course code and title
      *
      * @author Jad Seaidoun
+     * @since 1.1
      */
     @Override
     public String toString() {
